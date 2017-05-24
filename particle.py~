@@ -32,7 +32,7 @@ class Molecule:
         initialVector=(self.p2pos[0]-self.p1pos[0])**2 + (self.p2pos[1]-self.p1pos[1])**2
         initialDisplacement=np.sqrt(initialVector)
         displacement=self.Lo-initialDisplacement
-        force=-self.k* displacement
+        force=-self.k* initialDisplacement
         displ=self.get_displ()
         print(displ[0])
         return np.array([(force * displ[0]/initialDisplacement),(force *displ[1]/initialDisplacement)])

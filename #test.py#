@@ -1,0 +1,14 @@
+#!/anaconda/bin/python
+from particle import Particle,Molecule
+import numpy as np
+PositionArray=np.array([1,2]) 
+myParticle = Particle(PositionArray, 10)
+myPart=Particle((PositionArray *2),5)
+myMolecule=Molecule(myParticle,myPart,4,5)
+print(myParticle.vel)
+displacement=myMolecule.get_displ()
+force=myMolecule.get_force()
+print(displacement)
+print(force)
+
+
