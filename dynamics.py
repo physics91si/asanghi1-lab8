@@ -26,8 +26,8 @@ def init_molecule():
 # TODO: Implement this function
 def time_step(dt, mol):
    """Sets new positions and velocities of the particles attached to mol"""
-   mol.p1.vel=mol.p1.vel  -  mol.get_force()/mol.p1.m * dt
-   mol.p2.vel=mol.p2.vel +  mol.get_force()/mol.p2.m * dt
+   mol.p1.vel=mol.p1.vel  +  mol.get_force()/mol.p1.m * dt
+   mol.p2.vel=mol.p2.vel -  mol.get_force()/mol.p2.m * dt
    mol.p1.pos=mol.p1.pos + mol.p1.vel * dt
    mol.p2.pos=mol.p2.pos + mol.p2.vel * dt
    print(mol.p2.vel)

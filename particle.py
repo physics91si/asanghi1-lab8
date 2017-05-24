@@ -18,18 +18,16 @@ class Particle:
 class Molecule:
     
     def __init__(self,p1,p2,k,L0):
-        self.p1pos=p1.pos
-        self.p2pos=p2.pos
         self.p1=p1
         self.p2=p2
         self.k=k
         self.Lo=L0
 
     def get_displ(self):
-        return (self.p2pos- self.p1pos)
+        return (self.p2.pos- self.p1.pos)
     
     def get_force(self):
-        initialVector=(self.p2pos[0]-self.p1pos[0])**2 + (self.p2pos[1]-self.p1pos[1])**2
+        initialVector=(self.p2.pos[0]-self.p1.pos[0])**2 + (self.p2.pos[1]-self.p1.pos[1])**2
         initialDisplacement=np.sqrt(initialVector)
         displacement=self.Lo-initialDisplacement
         force=-self.k* displacement
